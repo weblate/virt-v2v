@@ -12,10 +12,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libguestfs 1.39.12\n"
-"Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug.cgi?"
-"component=libguestfs&product=Virtualization+Tools\n"
+"Report-Msgid-Bugs-To: https://bugzilla.redhat.com/enter_bug."
+"cgi?component=libguestfs&product=Virtualization+Tools\n"
 "POT-Creation-Date: 2021-06-16 11:35+0100\n"
-"PO-Revision-Date: 2021-03-05 07:01+0000\n"
+"PO-Revision-Date: 2021-06-30 17:04+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <https://translate.fedoraproject.org/projects/"
 "libguestfs/virt-v2v-master/uk/>\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.7\n"
 
 #: v2v/input_ova.ml:152 common/mltools/tools_utils.ml:187
 msgid "%s"
@@ -305,7 +305,7 @@ msgstr "-o rhv-upload: -oo rhv-cluster встановлено декілька �
 
 #: v2v/output_rhv_upload.ml:85
 msgid "-o rhv-upload: invalid UUID for -oo rhv-disk-uuid"
-msgstr ""
+msgstr "-o rhv-upload: некоректне значення UUID для -oo rhv-disk-uuid"
 
 #: v2v/cmdline.ml:709
 msgid ""
@@ -1866,6 +1866,13 @@ msgid ""
 "If the guest should work with virt-v2v (see virt-v2v docs) then a fix will "
 "be required in libguestfs."
 msgstr ""
+"для цієї гостьової системи Linux не вдалося успішно виконати інспекцію бази "
+"даних пакунків. Повторно запустіть virt-v2v із параметрами -v -x і "
+"перегляньте список помилок. Ця помилка є внутрішньою помилкою програми, яка, "
+"ймовірно, свідчить про те, що у засобах інспектування libguestfs не "
+"передбачено підтримки цієї гостьової системи. Якщо ця гостьова система має "
+"працювати з virt-v2v (див. документацію до virt-v2v), до libguestfs має бути "
+"внесено виправлення."
 
 #: v2v/v2v.ml:282
 msgid ""
@@ -2246,16 +2253,12 @@ msgstr ""
 "Доступно %Ld inode < потрібно %Ld inode"
 
 #: v2v/v2v.ml:417
-#, fuzzy
-#| msgid ""
-#| "not enough free space for conversion on filesystem ‘%s’.  %Ld bytes free "
-#| "< %Ld bytes needed"
 msgid ""
 "not enough free space for conversion on filesystem ‘%s’.  %.1f MB free < %d "
 "MB needed"
 msgstr ""
 "у файловій системі «%s» недостатньо вільного місця для перетворення. "
-"Вільними є %Ld байтів < потрібно %Ld байтів"
+"Вільними є %.1f МБ < потрібно %d МБ"
 
 #: v2v/create_ovf.ml:1007
 msgid ""
