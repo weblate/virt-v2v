@@ -200,8 +200,7 @@ ifelse(ENABLE_BLOCK_DRIVER, yes, `
 When choosing a block driver for Windows guests, prefer C<virtio-blk> or
 C<virtio-scsi>.  The default is C<virtio-blk>.
 
-Note this has no effect for Linux guests at the moment.  That may be
-added in future.
+This has no effect for Linux guests.
 ')
 
 =item B<--collect> GUEST[B<:>LOCAL]
