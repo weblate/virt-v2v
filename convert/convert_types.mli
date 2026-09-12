@@ -16,7 +16,10 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *)
 
-type block_driver_option = Block_driver_virtio_blk | Block_driver_virtio_scsi
+type block_driver_option =
+  | Block_driver_virtio_blk
+  | Block_driver_virtio_scsi
+  | Block_driver_none
 (* Type of the [--block-driver] option. *)
 
 val block_driver_option_of_string : string -> block_driver_option

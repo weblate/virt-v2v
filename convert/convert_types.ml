@@ -19,11 +19,15 @@
 open Tools_utils
 open Common_gettext.Gettext
 
-type block_driver_option = Block_driver_virtio_blk | Block_driver_virtio_scsi
+type block_driver_option =
+  | Block_driver_virtio_blk
+  | Block_driver_virtio_scsi
+  | Block_driver_none
 
 let block_driver_option_of_string = function
   | "virtio-blk" | "virtio_blk" | "viostor" -> Block_driver_virtio_blk
   | "virtio-scsi" | "virtio_scsi" | "vioscsi" -> Block_driver_virtio_scsi
+  | "none" -> Block_driver_none
   | driver ->
      error (f_"unknown block driver ‘--block-driver %s’") driver
 

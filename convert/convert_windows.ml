@@ -55,6 +55,18 @@ let convert (g : G.guestfs) source inspect i_firmware
       let drivers = Inject_virtio_win.get_block_driver_priority virtio_win in
       let drivers = "vioscsi" :: drivers in
       Inject_virtio_win.set_block_driver_priority virtio_win drivers
+   | Block_driver_none ->
+      (* This will cause [Inject_virtio_win] to copy all the virtio-win
+       * drivers into the guest (if possible), but then none of them
+       * will match anything on the priority list.  It will skip doing
+       * the pre-installation registry edits and print a warning about
+       * emulated devices.  The warning shouldn't be printed because
+       * this is what the user asked for.
+       *
+       * XXX We should improve the [Inject_virtio_win] API here, but
+       * this works for now.
+       *)
+      Inject_virtio_win.set_block_driver_priority virtio_win []
   );
 
   (* If the Windows guest has AV installed. *)

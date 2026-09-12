@@ -117,6 +117,18 @@ $VG virt-v2v --debug-gc --block-driver virtio-scsi \
 test -f $d/windows.xml
 test -f $d/windows-sda
 
+rm $d/windows.xml $d/windows-sda
+
+# Check that conversion works with --block-driver none
+$VG virt-v2v --debug-gc --block-driver none \
+    -i disk $img_base -o local -os $d
+
+# Check that libvirt XML metadata and a disk was created.
+test -f $d/windows.xml
+test -f $d/windows-sda
+
+rm $d/windows.xml $d/windows-sda
+
 # Test in-place conversion with --block-driver specified
 #
 # Note that v2v actually copies all the drivers present in $VIRTIO_WIN, no

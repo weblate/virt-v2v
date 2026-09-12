@@ -193,12 +193,20 @@ See I<--network> below.
 
 ifelse(ENABLE_BLOCK_DRIVER, yes, `
 
+=item B<--block-driver> B<none>
+
 =item B<--block-driver> B<virtio-blk>
 
 =item B<--block-driver> B<virtio-scsi>
 
-When choosing a block driver for Windows guests, prefer C<virtio-blk> or
-C<virtio-scsi>.  The default is C<virtio-blk>.
+When choosing a block driver for Windows guests, prefer C<virtio-blk>
+or C<virtio-scsi>, or do not pre-install any storage driver.
+
+The default is C<virtio-blk>.
+
+This only affects pre-installation of storage drivers for Windows
+guests.  If virtio-win drivers are available, they will still be
+copied into the guest, even if C<none> is selected here.
 
 This has no effect for Linux guests.
 ')
