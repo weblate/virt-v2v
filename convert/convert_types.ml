@@ -16,7 +16,16 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *)
 
+open Tools_utils
+open Common_gettext.Gettext
+
 type block_driver_option = Block_driver_virtio_blk | Block_driver_virtio_scsi
+
+let block_driver_option_of_string = function
+  | "virtio-blk" -> Block_driver_virtio_blk
+  | "virtio-scsi" -> Block_driver_virtio_scsi
+  | driver ->
+     error (f_"unknown block driver ‘--block-driver %s’") driver
 
 module type CONVERT = sig
   val name : string

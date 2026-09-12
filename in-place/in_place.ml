@@ -257,10 +257,8 @@ read the man page virt-v2v-in-place(1).
   let args = List.rev !args in
   let block_driver =
     match !block_driver with
-    | None | Some "virtio-blk" -> Convert_types.Block_driver_virtio_blk
-    | Some "virtio-scsi" -> Convert_types.Block_driver_virtio_scsi
-    | Some driver ->
-       error (f_"unknown block driver ‘--block-driver %s’") driver in
+    | None -> Convert_types.Block_driver_virtio_blk
+    | Some driver -> Convert_types.block_driver_option_of_string driver in
   let collect = !collect in
   let collect_file = !collect_file in
   let customize_ops = get_customize_ops () in

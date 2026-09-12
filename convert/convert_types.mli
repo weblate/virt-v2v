@@ -19,6 +19,8 @@
 type block_driver_option = Block_driver_virtio_blk | Block_driver_virtio_scsi
 (* Type of the [--block-driver] option. *)
 
+val block_driver_option_of_string : string -> block_driver_option
+
 module type CONVERT = sig
   val name : string
   (** Module name (only used in debugging). *)
